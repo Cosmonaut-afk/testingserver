@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def home():
+def index():
     return render_template("index.html")
 
 
@@ -30,9 +30,13 @@ def otros():
 
 @app.route("/cart")
 def cart():
-    return cart("cart.html")
+    return render_template("cart.html")
+
+
+@app.route("/checkout")
+def checkout():
+    return render_template("checkout.html")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-
